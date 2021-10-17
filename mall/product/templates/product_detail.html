@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load humanize %}
+{% block contents %}
+<div class="row mt-5">
+    <div class="col-12">
+        <div class="card" style="width: 100%;">
+            <div  class="card-body">
+                <h3 class="card-title">
+                    {{ product.name }}
+                </h3>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">가격: {{ product.price|intcomma }}</li>
+                <li class="list-group-item">등록날짜: {{ product.register_date|date:'Y-m-d H:i' }}</li>
+                <li class="list-group-item">{{ product.description|safe }}</li>
+            </ul>
+        </div>
+        <div class="row mt-5">
+            <div class="col-12">
+                <button class="btn btn-primary" onclick="history.back()">
+                    목록보기    
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
